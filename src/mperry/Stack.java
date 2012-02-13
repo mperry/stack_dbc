@@ -11,6 +11,7 @@ public class Stack<T> {
 	private List<T> list = new ArrayList<T>();
 	
 	@Requires({"item != null"})
+	@Ensures("top() == item")
 	public void push(T item) {
 		list.add(item);
 	}
@@ -26,6 +27,12 @@ public class Stack<T> {
 		return list.get(index());
 	}
 	
+	@Ensures("result == (size() == 0)")
+	public boolean isEmpty() {
+		return size() == 0;
+	}
+	
+	@Ensures("result >= 0")
 	public int size() {
 		return list.size();
 	}

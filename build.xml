@@ -44,6 +44,9 @@
 	<target name="init">
 		<mkdir dir="${classes.dir}" />
 		<mkdir dir="${contracts.dir}" />
+		<!--
+		<mkdir dir="${test.dir}" />
+		-->
 	</target>
 
 	<target name="clean">
