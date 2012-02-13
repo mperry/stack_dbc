@@ -33,9 +33,9 @@ public class Account {
 	@Requires({"amount >= 0 && getBalance() >= amount", "a != null", "this != a"})
 	@Ensures({"getBalance() == old(getBalance()) - amount && " +
 			"a.getBalance() == old(a.getBalance()) + amount"})
-	public void transferTo(Account a, int amount) {
+	public void transferTo(Account to, int amount) {
 		withdraw(amount);
-		a.deposit(amount);
+		to.deposit(amount);
 	}
 	
 	public int getBalance() {
